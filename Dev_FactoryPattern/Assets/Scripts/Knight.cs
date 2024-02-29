@@ -6,21 +6,27 @@ using UnityEngine;
 
 public class Knight : MonoBehaviour
 {
-    [SerializeField] WeaponFactory weaponFactory;
-    IWeapon weapon= IWeapon.CreateDefault();
+    [SerializeField] EquipmentFactory equipmentFactory;
+
+    IWeapon weapon;
+    IShield shield;
 
     private void Start()
     {
-        if (weaponFactory != null)
-        {
-            weapon = weaponFactory.CreateWeapon();
-        }
+        weapon=equipmentFactory.CreateWeapon();
+        shield=equipmentFactory.CreateShield();
 
         Attack();
+        Defend();
     }
 
     public void Attack()
     {
-        weapon?.Attack();
+        weapon.Attack();
+    }
+
+    public void Defend()
+    {
+        shield.Defend();
     }
 }
