@@ -67,4 +67,11 @@ Imagine a car manufacturing plant where cars are produced based on different mod
 
 ## How I implemented this design pattern in my project.
 
-Will be updated soon when complete.
+First we created a Factory to handle creation of Bow and Sword to decouple player from any logic for Weapon creation. But again we created a equipment Factory to handle all kinds of equipment like sword, bow, Shield and it becomes much easier to add more kind of equipments. This helps us achieve Open-Closed Principle, which says The code should open for extension and closed for modification.
+### We also achieved encapsulating weapon/equipment creation and reduced coupling.
+
+![image](https://github.com/iAmSidh108/DP_FactoryPattern/assets/63715240/e5df2bd7-bac8-4fa4-8edd-57b96df4fd3a)
+
+### We also achieved central point of control and configuration for equipment creation.
+
+![image](https://github.com/iAmSidh108/DP_FactoryPattern/assets/63715240/08403647-97e1-4335-9007-3cf5693e7355)
