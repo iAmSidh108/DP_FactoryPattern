@@ -8,25 +8,19 @@ public class Knight : MonoBehaviour
 {
     [SerializeField] EquipmentFactory equipmentFactory;
 
-    IWeapon weapon;
-    IShield shield;
-
     private void Start()
     {
-        weapon=equipmentFactory.CreateWeapon();
-        shield=equipmentFactory.CreateShield();
-
         Attack();
         Defend();
     }
 
     public void Attack()
     {
-        weapon.Attack();
+        equipmentFactory.CreateWeapon().Attack();
     }
 
     public void Defend()
     {
-        shield.Defend();
+        equipmentFactory.CreateShield().Defend();
     }
 }

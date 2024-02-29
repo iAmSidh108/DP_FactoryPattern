@@ -4,7 +4,7 @@ using UnityEngine;
 
 public abstract class ShieldFactory : ScriptableObject
 {
-    public abstract IShield CreateShield();
+    public abstract IShield ProvideShield();
 }
 
 

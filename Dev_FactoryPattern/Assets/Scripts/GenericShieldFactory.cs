@@ -5,8 +5,15 @@ using UnityEngine;
 [CreateAssetMenu(fileName ="Generic Shield Factory", menuName ="Shield Factory/Generic")]
 public class GenericShieldFactory : ShieldFactory
 {
-    public override IShield CreateShield()
+    IShield shield;
+
+    public override IShield ProvideShield()
     {
-        return new Shield();
+        if (shield == null)
+        {
+            shield = new Shield();
+        }
+
+        return shield;
     }
 }

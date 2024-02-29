@@ -13,7 +13,7 @@ public class EquipmentFactory : ScriptableObject
     {
         if (WeaponFactory != null)
         {
-            return WeaponFactory.CreateWeapon();
+            return WeaponFactory.ProvideWeapon();
         }
 
         return IWeapon.CreateDefault();
@@ -23,7 +23,7 @@ public class EquipmentFactory : ScriptableObject
     {
         if (ShieldFactory != null)
         {
-            return ShieldFactory.CreateShield();
+            return ShieldFactory.ProvideShield();
         }
 
         return IShield.CreateDefault();

@@ -5,8 +5,13 @@ using UnityEngine;
 [CreateAssetMenu(menuName = "Weapon/Sword", fileName = "Sword")]
 public class SwordFactory : WeaponFactory
 {
-    public override IWeapon CreateWeapon()
+    IWeapon weapon;
+    public override IWeapon ProvideWeapon()
     {
-        return new Sword();
+        if(weapon == null)
+        {
+            weapon = new Sword();
+        }
+        return weapon;
     }
 }
