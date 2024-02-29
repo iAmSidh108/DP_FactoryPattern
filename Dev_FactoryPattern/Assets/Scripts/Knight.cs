@@ -4,23 +4,13 @@ using UnityEngine;
 
 public class Knight : MonoBehaviour
 {
-    [SerializeField] string weaponType = "Sword";
+    WeaponFactory weaponFactory;
     IWeapon weapon;
 
     private void Start()
     {
-        switch (weaponType)
-        {
-            case "Sword":
-                weapon = new Sword();
-                Attack();
-                break;
-
-            case "Bow":
-                weapon = new Bow();
-                Attack();
-                break;
-        }
+        weaponFactory = new SwordFactory();
+        weapon = weaponFactory.CreateWeapon();
     }
 
     public void Attack()
